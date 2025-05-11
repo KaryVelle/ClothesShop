@@ -15,6 +15,12 @@ MonoBehaviour:
   dialogues:
   - Text: Bueno y bara. Bueno y bara. Si no te alcanza puedes ir a limosniar a la
       playa.
-    isEndDialogue: 1
+    isEndDialogue: 0
   - Text: Pacaaaaa paca de buena calidaaaad.
+    isEndDialogue: 0
+  - Text: "\xC1ndele mijo no tengo todo el d\xEDa"
+    isEndDialogue: 0
+  - Text: Ora ora cambio de outfit
+    isEndDialogue: 0
+  - Text: FINO, PROLIJO, INTACTO
     isEndDialogue: 1

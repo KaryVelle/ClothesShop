@@ -6,16 +6,24 @@ namespace Player
 {
     public class Coin : MonoBehaviour
     {
-        [SerializeField] private CurrencyManager _currencyManager;
-        [SerializeField] private PoolingSystem _poolingSystem;
+        private CurrencyManager _currencyManager;
+        private PoolingSystem _poolingSystem;
+        private SfxManager _sfxManager;
         [SerializeField] private int coinValue;
-        
+
+        private void Awake()
+        {
+            _currencyManager = FindAnyObjectByType<CurrencyManager>();
+            _poolingSystem = FindAnyObjectByType<PoolingSystem>();
+            _sfxManager = FindAnyObjectByType<SfxManager>();
+        }
+
 
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.layer != 6) return;
             _currencyManager.AddCurrency(coinValue);
-            Debug.Log("Added");
+            _sfxManager.PlaySfx(SfxManager.Sounds.Gem);
             _poolingSystem.ReturnToPool(gameObject);
         }
     }

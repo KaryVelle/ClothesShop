@@ -11,6 +11,8 @@ public class NPC : MonoBehaviour
     private DialogueManager _dialogueManager;
     private InputManager _inputManager;
     private bool isPlayerInZone;
+    [SerializeField] private GameObject interact;
+    private SfxManager _sfxManager;
 
     private void Awake()
     {
@@ -18,6 +20,7 @@ public class NPC : MonoBehaviour
         _playerMov = FindAnyObjectByType<PlayerMov>();
         _dialogueManager = FindAnyObjectByType<DialogueManager>();
         _inputManager = FindAnyObjectByType<InputManager>();
+        _sfxManager = FindAnyObjectByType<SfxManager>();
     }
     private void Update()
     {
@@ -33,6 +36,7 @@ public class NPC : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInZone = true;
+            interact.SetActive(true);
         }
     }
 
@@ -41,6 +45,7 @@ public class NPC : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isPlayerInZone = false;
+            interact.SetActive(false);
         }
     }
 
@@ -51,5 +56,6 @@ public class NPC : MonoBehaviour
         Vector2 directionDown = new Vector2(0, -1);
         _playerMov.SetAnimToFixedDirection(directionDown);
         _dialogueManager.StartDialogue(_dialogueContainer);
+        _sfxManager.PlaySfx(SfxManager.Sounds.Npc);
     }
 }
