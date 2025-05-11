@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0f07839f9cf16448f049eddb1a4174, type: 3}
+  m_Name: ClotheStoreData
+  m_EditorClassIdentifier: 
+  typesItems:
+  - clotheType: 0
+    items:
+    - itemID: Long Hair
+      itemSprite: {fileID: -1845871153, guid: 83c1a96a1db5ce24f9d307e7fcc2a5b8, type: 3}
+      itemPrice: 100
+      isPurchased: 0
+    - itemID: Short Hair
+      itemSprite: {fileID: 821631748, guid: 1f7c6255bf7a0e5459425930b70b4ce9, type: 3}
+      itemPrice: 200
+      isPurchased: 0
+  - clotheType: 1
+    items:
+    - itemID: Yellow
+      itemSprite: {fileID: -147950855, guid: 3d8fbb7819359d443ac1e964501768c7, type: 3}
+      itemPrice: 100
+      isPurchased: 0
+    - itemID: Blue
+      itemSprite: {fileID: -2050433511, guid: 19d3ac47a8b6cb24ebc957c9cea687f7, type: 3}
+      itemPrice: 200
+      isPurchased: 0
